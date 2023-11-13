@@ -15,7 +15,7 @@ function system_research {
     # grep MemTotal /proc/meminfo | awk '{ printf "%.3f GB", $2 / 1024 /1024 }'
   echo -e "$1 $2 RAM_USED $END_COLOR = $3 $4 $(free --mega | awk 'NR==2 { printf "%.3f GB", $3 / 1024}') $END_COLOR";
   echo -e "$1 $2 RAM_FREE $END_COLOR = $3 $4 $(free --mega | awk 'NR==2 { printf "%.3f GB", $4 / 1024}') $END_COLOR";
-  echo -e "$1 $2 SPACE_ROOT $END_COLORT = $3 $4 $(df / | awk 'NR==2 { printf "%.2f MB", $2 / 1024}') $END_COLOR";
+  echo -e "$1 $2 SPACE_ROOT $END_COLOR = $3 $4 $(df / | awk 'NR==2 { printf "%.2f MB", $2 / 1024}') $END_COLOR";
   echo -e "$1 $2 SPACE_ROOT_USED $END_COLOR = $3 $4 $(df / | awk 'NR==2 { printf "%.2f MB", $3 / 1024 }') $END_COLOR" ;
   echo -e "$1 $2 SPACE_ROOT_FREE $END_COLOR = $3 $4 $(df / | awk 'NR==2 { printf "%.2f MB", $4 / 1024 }') $END_COLOR";
 }

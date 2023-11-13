@@ -42,21 +42,15 @@
 # $$ - PID самого скрипта
 #ниже регулярное выражение ищет числа которые могут начинаться со знаков, многозначные и у которых может быть дробная часть
 
-reg_ex_number='^[a-z]+$'
+reg_ex_number='^[+-]?[0-9]+([.][0-9]+)?$'
 
-
-error_too_many_parameters="Too many parameters, you must use only one parameter."
-error_incorrect_input="Incorrect input, use non number parameter."
+error_incorrect_input="Incorrect input, use one non number parameter."
 parameter_1=$1
 number_of_parameters=$#
 
-if [ $number_of_parameters -gt 1 ]
+if [ $number_of_parameters -ne 1 ]
 then
-  echo $error_too_many_parameters;
-  exit 1;
-elif [ $number_of_parameters -lt 1 ]
-then
-  echo "Enter non number parameter.";
+  echo $error_incorrect_input;
   exit 1;
 elif [[ "$parameter_1" =~ $reg_ex_number ]]
 # [ is an "alias" for test, ( is just a grouping parenthesis, [[ is another form of conditional construct. 
