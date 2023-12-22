@@ -125,6 +125,10 @@ function colorize {
   esac
 }
 
-function get_color {
+# function scan_colors_from_config {
+#   awk -F= '{ print $2}' setup.conf
+# }
+
+# function color_designation {
   
-}
+# }
